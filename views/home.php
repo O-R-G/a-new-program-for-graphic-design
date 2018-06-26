@@ -31,6 +31,9 @@
       <?= $home['notes']; ?>
     </div>
   </div>
+  <div class="column" style="visibility: hidden;">
+    <img src="<?= m_url($homeMedia[0]); ?>">
+  </div>
 </div>
 
 <script>
