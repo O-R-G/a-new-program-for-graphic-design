@@ -42,10 +42,10 @@ a:visited {
     /* display: inline-block;
     line-height: 18px; */
 
-  background-image: linear-gradient(to bottom, #fff, #fff);
-   background-position: 0 20px;
-   background-repeat: repeat-x;
-   background-size: 1px 2px;
+    background-image: linear-gradient(to right, #FFF, #FFF);
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    background-size: 100% 1px;
 }
 
 a:hover {
@@ -66,11 +66,18 @@ ul {
 .container {
   display: flex;
   flex-direction: row;
+  margin-bottom: 300px;
 }
 
 .column {
+  display: flex;
+  flex-direction: column;
   width: 450px;
   margin: 25px;
+}
+
+.column div {
+  order: 2;
 }
 
 #canvas-container canvas {
@@ -86,6 +93,9 @@ ul {
   .container {
     margin: 25px;
     flex-direction: column;
-    margin-bottom: 300px;
+  }
+
+  #first {
+    flex-direction: column-reverse;
   }
 }

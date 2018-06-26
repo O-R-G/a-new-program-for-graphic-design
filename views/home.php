@@ -15,13 +15,14 @@
 ?>
 <div class="container">
   <div class="column" id="first">
-    <div class="title">
-      <?= $home['deck']; ?>
+    <div>
+      <div class="title">
+        <?= $home['deck']; ?>
+      </div>
+      <div class="content">
+        <?= $home['body']; ?>
+      </div>
     </div>
-    <div class="content">
-      <?= $home['body']; ?>
-    </div>
-
     <div class="" id="canvas-container">
 
     </div>
@@ -67,15 +68,25 @@
     ctx.filter = "blur(5px)";
     ctx.globalCompositeOperation = "lighter";
     ctx.beginPath();
-    ctx.fillStyle = "rgba(0,255,0,1)";
+
+    var greenGradient = ctx.createRadialGradient(xys[0][0],xys[0][1], r*.05, xys[0][0], xys[0][1], r*.7);
+    greenGradient.addColorStop(0, "rgba(0,255,0,1)");
+    greenGradient.addColorStop(1, "rgba(0,255,0,0)");
+    ctx.fillStyle = greenGradient;
     ctx.arc(xys[0][0], xys[0][1], r/2, Math.PI*2, 0, false);
     ctx.fill()
     ctx.beginPath();
-    ctx.fillStyle = "rgba(255,0,0,1)";
+    var redGradient = ctx.createRadialGradient(xys[1][0],xys[1][1], r*.05, xys[1][0], xys[1][1], r*.7);
+    redGradient.addColorStop(0, "rgba(255,0,0,1)");
+    redGradient.addColorStop(1, "rgba(255,0,0,0)");
+    ctx.fillStyle = redGradient;
     ctx.arc(xys[1][0], xys[1][1], r/2, Math.PI*2, 0, false);
     ctx.fill()
     ctx.beginPath();
-    ctx.fillStyle = "rgba(0,0,255,1)";
+    var blueGradient = ctx.createRadialGradient(xys[2][0],xys[2][1], r*.05, xys[2][0], xys[2][1], r*.7);
+    blueGradient.addColorStop(0, "rgba(0,0,255,1)");
+    blueGradient.addColorStop(1, "rgba(0,0,255,0)");
+    ctx.fillStyle = blueGradient;
     ctx.arc(xys[2][0], xys[2][1], r/2, Math.PI*2, 0, false);
     ctx.fill();
     ctx.restore();
