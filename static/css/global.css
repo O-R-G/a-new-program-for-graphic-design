@@ -76,12 +76,11 @@ ul {
   margin: 25px;
 }
 
-.column div {
-  order: 2;
-}
 
 #canvas-container canvas {
   width: 100%;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
 }
 
 @media screen and (max-width: 640px) {

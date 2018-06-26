@@ -65,7 +65,7 @@
     var ctx = canvas.getContext("2d");
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.save();
-    ctx.filter = "blur(5px)";
+    // ctx.filter = "blur(5px)";
     ctx.globalCompositeOperation = "lighter";
     ctx.beginPath();
 
