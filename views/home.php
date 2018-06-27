@@ -92,19 +92,22 @@
     ctx.restore();
 
   function update1() {
-  	var _r = r*.25;
+  	// var _r = r*.25;
+  	var _r = r*.15;
     xys[0][0] = _r*Math.cos(ts[0])+width/2+_r;
     xys[0][1] = _r*Math.sin(ts[0])+height/2-dy;
   }
 
   function update2() {
-  	var _r = r*.25;
+  	// var _r = r*.25;
+  	var _r = r*.15;
     xys[1][0] = _r*Math.cos(ts[1])+width/2-_r;
     xys[1][1] = _r*Math.sin(ts[1])+height/2-dy;
   }
 
   function update3() {
-  	var _r = r*.433015;
+  	// var _r = r*.433015;
+  	var _r = r*.259809;
     xys[2][0] = _r*Math.cos(ts[2])+width/2;
     xys[2][1] = _r*Math.sin(ts[2])+height/2+_r-dy;
   }
