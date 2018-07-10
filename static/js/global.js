@@ -2,7 +2,8 @@ function runDots(w, h) {
   var width = w;
   var height = h;
   var r = width/3;
-  var dy = r*.50807/2;
+  // var dy = r*.50807/2;
+  var dy = r*.15;
   var step = .05;
 
   var ts = [Math.PI, 0, -Math.PI/2];
