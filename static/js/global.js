@@ -1,10 +1,34 @@
-function runDots(w, h) {
+function runDots(w, h, s) {
   var width = w;
   var height = h;
   var r = width/3;
   // var dy = r*.50807/2;
   var dy = r*.15;
-  var step = .05;
+  var step = s;
+  var pause = false;
+
+  document.onkeydown = function(e) {
+    console.log(e.which);
+    switch(e.which) {
+        case 189: // minus
+        step -= .05;
+        break;
+
+        case 187: // plus
+        step += .05;
+        break;
+
+        case 32: // space
+        pause = !pause;
+        break;
+
+        // case 40: // down
+        // break;
+
+        default: return; // exit this handler for other keys
+    }
+    e.preventDefault(); // prevent the default action (scroll / move caret)
+  }
 
   var ts = [Math.PI, 0, -Math.PI/2];
   var xys = [[], [], []];
@@ -18,9 +42,12 @@ function runDots(w, h) {
   // canvas.onmouseover = function() { step = .01; };
   // canvas.onmouseout = function() { step = .05; };
 
+  var time = Date.now();
   function updateCanvas() {
-    for(var i = 0; i < ts.length; i++) {
-      ts[i] += step;
+    if (!pause) {
+      for(var i = 0; i < ts.length; i++) {
+        ts[i] += step;
+      }
     }
     update1();
     update2();
@@ -74,7 +101,14 @@ function runDots(w, h) {
     xys[2][0] = _r*Math.cos(ts[2])+width/2;
     xys[2][1] = _r*Math.sin(ts[2])+height/2+_r-dy;
   }
-
+  
+  if (Math.abs(ts[0]%(2*Math.PI) - Math.PI) < s/2) {
+    var t = Date.now();
+    var diff = (t-time)/1000;
+    var bpm = 60/diff;
+    // console.log(bpm);
+    time = t;
+  }
   requestAnimationFrame(updateCanvas);
   };
 

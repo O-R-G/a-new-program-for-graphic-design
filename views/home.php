@@ -39,5 +39,5 @@
 
 <script src="static/js/global.js"></script>
 <script>
-runDots(500, 500);
+runDots(500, 500, .05);
 </script>

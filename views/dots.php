@@ -5,6 +5,7 @@
     </div>
   </div>
 </div>
+<!-- <script src="static/js/fps.min.js"></script> -->
 <script src="static/js/global.js"></script>
 <script>
 var w = window.innerWidth;
@@ -14,5 +15,5 @@ if (w > h) {
 } else {
   h = w;
 }
-runDots(w, h);
+runDots(w, h, .226/4);
 </script>
