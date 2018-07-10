@@ -1,6 +1,8 @@
-<div id="full-size-dots">
-  <div class="" id="canvas-container">
+<div class="fill">
+  <div id="full-size-dots">
+    <div class="" id="canvas-container">
 
+    </div>
   </div>
 </div>
 <script src="static/js/global.js"></script>

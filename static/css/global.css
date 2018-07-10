@@ -76,11 +76,18 @@ ul {
   margin: 25px;
 }
 
+.fill {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  cursor: none;
+}
+
 #full-size-dots {
   display: flex;
   flex-direction: row;
-  width: 100vw;
-  height: 100vh;
   justify-content: space-around;
   overflow: hidden;
 }
