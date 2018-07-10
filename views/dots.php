@@ -1,0 +1,16 @@
+<div id="full-size-dots">
+  <div class="" id="canvas-container">
+
+  </div>
+</div>
+<script src="static/js/global.js"></script>
+<script>
+var w = window.innerWidth;
+var h = window.innerHeight;
+if (w > h) {
+  w = h;
+} else {
+  h = w;
+}
+runDots(w, h);
+</script>
