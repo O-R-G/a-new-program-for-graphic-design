@@ -27,7 +27,7 @@ function runDots(w, h, s) {
 
         default: return; // exit this handler for other keys
     }
-    e.preventDefault(); // prevent the default action (scroll / move caret)
+    // e.preventDefault(); // prevent the default action (scroll / move caret)
   }
 
   var ts = [Math.PI, 0, -Math.PI/2];

@@ -75,7 +75,6 @@ ul {
   width: 450px;
   min-width: 450px;
   padding: 25px;
-  box-sizing:content-box;
 }
 
 .fill {
