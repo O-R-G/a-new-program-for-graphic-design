@@ -73,7 +73,9 @@ ul {
   display: flex;
   flex-direction: column;
   width: 450px;
-  margin: 25px;
+  min-width: 450px;
+  padding: 25px;
+  box-sizing:content-box;
 }
 
 .fill {
@@ -83,6 +85,10 @@ ul {
   flex-direction: column;
   justify-content: space-around;
   cursor: none;
+}
+
+.title {
+  padding-bottom: 1em;
 }
 
 #full-size-dots {
@@ -98,15 +104,24 @@ ul {
   -webkit-filter: blur(5px);
 }
 
+.static-image {
+  visibility: hidden;
+}
+
 @media screen and (max-width: 640px) {
   .column {
     width: 100%;
     margin: 0px;
+    padding-bottom: 2em;
   }
 
   .container {
     margin: 25px;
     flex-direction: column;
+  }
+
+  .static-image {
+    display: none;
   }
 
   #first {

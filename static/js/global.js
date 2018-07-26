@@ -8,7 +8,7 @@ function runDots(w, h, s) {
   var pause = false;
 
   document.onkeydown = function(e) {
-    console.log(e.which);
+    // console.log(e.which);
     switch(e.which) {
         case 189: // minus
         step -= .05;
@@ -101,7 +101,7 @@ function runDots(w, h, s) {
     xys[2][0] = _r*Math.cos(ts[2])+width/2;
     xys[2][1] = _r*Math.sin(ts[2])+height/2+_r-dy;
   }
-  
+
   if (Math.abs(ts[0]%(2*Math.PI) - Math.PI) < s/2) {
     var t = Date.now();
     var diff = (t-time)/1000;

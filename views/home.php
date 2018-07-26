@@ -1,17 +1,26 @@
 <?
-  // get home
-  function getHome($oo, $root) {
+  // get entry from query
+  function getEntry($oo, $root, $query) {
     $children = $oo->children($root);
       foreach($children as $child) {
         $name =  strtolower($child["name1"]);
-        if ($name == "home") {
+        if ($name == $query) {
           return $child;
         }
     }
   }
 
-  $home = getHome($oo, $root);
+  // most recent chronological sort
+  function date_sort($a, $b) {
+    return strtotime($b['begin']) - strtotime($a['begin']);
+  }
+
+  $home = getEntry($oo, $root, "home");
   $homeMedia = $oo->media($home['id']);
+
+  $entries = $oo->children(getEntry($oo, $root, "entries")['id']);
+  usort($entries, "date_sort");
+
 ?>
 <div class="container">
   <div class="column" id="first">
@@ -27,14 +36,19 @@
 
     </div>
   </div>
-  <div class="column">
-    <div class="sub-content">
-      <?= $home['notes']; ?>
-    </div>
-  </div>
-  <div class="column" style="visibility: hidden;">
+  <div class="column static-image">
     <img src="<?= m_url($homeMedia[0]); ?>">
   </div>
+  <? foreach($entries as $entry): ?>
+    <div class="column">
+      <div class="title">
+        <?= $entry['name1']; ?>
+      </div>
+      <div class="content">
+        <?= $entry['body']; ?>
+      </div>
+    </div>
+  <? endforeach; ?>
 </div>
 
 <script src="static/js/global.js"></script>
