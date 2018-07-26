@@ -42,7 +42,7 @@
   <? foreach($entries as $entry): ?>
     <div class="column">
       <div class="title">
-        <?= $entry['name1']; ?>
+        <?= $entry['deck']; ?>
       </div>
       <div class="content">
         <?= $entry['body']; ?>
