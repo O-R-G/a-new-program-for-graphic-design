@@ -30,46 +30,49 @@ function runDots(w, h, s) {
     // e.preventDefault(); // prevent the default action (scroll / move caret)
   }
 
-  var touchstartX = 0;
-  var touchstartY = 0;
-  var touchendX = 0;
-  var touchendY = 0;
+  let touchstartX = 0;
+  let touchstartY = 0;
+  let touchendX = 0;
+  let touchendY = 0;
 
-  var gesuredZone = document.getElementById('full-size-dots');
+  const gestureZone = document.getElementById('full-size-dots');
 
-  gesuredZone.addEventListener('touchstart', function(event) {
-      touchstartX = event.screenX;
-      touchstartY = event.screenY;
+  gestureZone.addEventListener('touchstart', function(event) {
+      touchstartX = event.changedTouches[0].screenX;
+      touchstartY = event.changedTouches[0].screenY;
   }, false);
 
-  gesuredZone.addEventListener('touchend', function(event) {
-      touchendX = event.screenX;
-      touchendY = event.screenY;
-      handleGesure();
+  gestureZone.addEventListener('touchend', function(event) {
+      touchendX = event.changedTouches[0].screenX;
+      touchendY = event.changedTouches[0].screenY;
+      handleGesture();
   }, false);
 
-  function handleGesure() {
-      var swiped = 'swiped: ';
+  function handleGesture() {
       if (touchendX < touchstartX) {
-          // alert(swiped + 'left!');
+          console.log('Swiped left');
           step -= 10;
       }
+
       if (touchendX > touchstartX) {
-          // alert(swiped + 'right!');
+          console.log('Swiped right');
           step += 10;
       }
-      if (touchendY < touchstartY) {
-          // alert(swiped + 'down!');
 
+      if (touchendY < touchstartY) {
+          console.log('Swiped up');
       }
+
       if (touchendY > touchstartY) {
-          // up?
+         console.log('Swiped down');
       }
-      if (touchendY == touchstartY) {
-          // alert('tap!');
-          pause = !pause;
+
+      if (touchendY === touchstartY) {
+         console.log('Tap');
+         pause != pause;
       }
   }
+
 
   var ts = [Math.PI, 0, -Math.PI/2];
   var xys = [[], [], []];
