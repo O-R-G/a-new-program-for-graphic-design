@@ -52,16 +52,18 @@ function runDots(w, h, s) {
       var swiped = 'swiped: ';
       if (touchendX < touchstartX) {
           // alert(swiped + 'left!');
+          step -= 10;
       }
       if (touchendX > touchstartX) {
           // alert(swiped + 'right!');
+          step += 10;
       }
       if (touchendY < touchstartY) {
           // alert(swiped + 'down!');
-          step -= 10;
+
       }
       if (touchendY > touchstartY) {
-          step += 10;
+          // up?
       }
       if (touchendY == touchstartY) {
           // alert('tap!');
