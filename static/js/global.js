@@ -51,12 +51,12 @@ function runDots(w, h, s) {
   function handleGesture() {
       if (touchendX < touchstartX) {
           console.log('Swiped left');
-          step -= 10;
+          step -= .05;
       }
 
       if (touchendX > touchstartX) {
           console.log('Swiped right');
-          step += 10;
+          step += .05;
       }
 
       if (touchendY < touchstartY) {
@@ -69,7 +69,7 @@ function runDots(w, h, s) {
 
       if (touchendY === touchstartY) {
          console.log('Tap');
-         pause != pause;
+         pause = !pause;
       }
   }
 
