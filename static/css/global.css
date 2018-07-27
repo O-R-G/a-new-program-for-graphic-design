@@ -107,10 +107,16 @@ ul {
   visibility: hidden;
 }
 
+#arrow {
+  width: 50px;
+  float: right;
+}
+
 @media screen and (max-width: 640px) {
   .column {
     width: 100%;
-    margin: 0px;
+    min-width: 100%;
+    padding: 0px;
     padding-bottom: 2em;
   }
 
@@ -120,6 +126,9 @@ ul {
   }
 
   .static-image {
+    display: none;
+  }
+  #arrow {
     display: none;
   }
 

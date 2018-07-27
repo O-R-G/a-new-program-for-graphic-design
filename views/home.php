@@ -36,8 +36,9 @@
 
     </div>
   </div>
-  <div class="column static-image">
-    <img src="<?= m_url($homeMedia[0]); ?>">
+  <div class="column">
+    <div id="arrow-container"><img id="arrow" src="/static/images/arrow-forward-6-k.svg"></div>
+    <img class="static-image" src="<?= m_url($homeMedia[0]); ?>">
   </div>
   <? foreach($entries as $entry): ?>
     <div class="column">
