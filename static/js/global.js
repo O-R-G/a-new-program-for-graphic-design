@@ -30,6 +30,45 @@ function runDots(w, h, s) {
     // e.preventDefault(); // prevent the default action (scroll / move caret)
   }
 
+  var touchstartX = 0;
+  var touchstartY = 0;
+  var touchendX = 0;
+  var touchendY = 0;
+
+  var gesuredZone = document.getElementById('full-size-dots');
+
+  gesuredZone.addEventListener('touchstart', function(event) {
+      touchstartX = event.screenX;
+      touchstartY = event.screenY;
+  }, false);
+
+  gesuredZone.addEventListener('touchend', function(event) {
+      touchendX = event.screenX;
+      touchendY = event.screenY;
+      handleGesure();
+  }, false);
+
+  function handleGesure() {
+      var swiped = 'swiped: ';
+      if (touchendX < touchstartX) {
+          // alert(swiped + 'left!');
+      }
+      if (touchendX > touchstartX) {
+          // alert(swiped + 'right!');
+      }
+      if (touchendY < touchstartY) {
+          // alert(swiped + 'down!');
+          step -= 10;
+      }
+      if (touchendY > touchstartY) {
+          step += 10;
+      }
+      if (touchendY == touchstartY) {
+          // alert('tap!');
+          pause = !pause;
+      }
+  }
+
   var ts = [Math.PI, 0, -Math.PI/2];
   var xys = [[], [], []];
 
