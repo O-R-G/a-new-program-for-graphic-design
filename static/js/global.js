@@ -30,49 +30,49 @@ function runDots(w, h, s) {
     // e.preventDefault(); // prevent the default action (scroll / move caret)
   }
 
-  let touchstartX = 0;
-  let touchstartY = 0;
-  let touchendX = 0;
-  let touchendY = 0;
+  var touchstartX = 0;
+  var touchstartY = 0;
+  var touchendX = 0;
+  var touchendY = 0;
 
-  const gestureZone = document.getElementById('full-size-dots');
+  var gestureZone = document.getElementById('full-size-dots');
+  if (gestureZone) {
+    gestureZone.addEventListener('touchstart', function(event) {
+        touchstartX = event.changedTouches[0].screenX;
+        touchstartY = event.changedTouches[0].screenY;
+    }, false);
 
-  gestureZone.addEventListener('touchstart', function(event) {
-      touchstartX = event.changedTouches[0].screenX;
-      touchstartY = event.changedTouches[0].screenY;
-  }, false);
+    gestureZone.addEventListener('touchend', function(event) {
+        touchendX = event.changedTouches[0].screenX;
+        touchendY = event.changedTouches[0].screenY;
+        handleGesture();
+    }, false);
 
-  gestureZone.addEventListener('touchend', function(event) {
-      touchendX = event.changedTouches[0].screenX;
-      touchendY = event.changedTouches[0].screenY;
-      handleGesture();
-  }, false);
+    function handleGesture() {
+        if (touchendX < touchstartX) {
+            console.log('Swiped left');
+            step -= .05;
+        }
 
-  function handleGesture() {
-      if (touchendX < touchstartX) {
-          console.log('Swiped left');
-          step -= .05;
-      }
+        if (touchendX > touchstartX) {
+            console.log('Swiped right');
+            step += .05;
+        }
 
-      if (touchendX > touchstartX) {
-          console.log('Swiped right');
-          step += .05;
-      }
+        if (touchendY < touchstartY) {
+            console.log('Swiped up');
+        }
 
-      if (touchendY < touchstartY) {
-          console.log('Swiped up');
-      }
+        if (touchendY > touchstartY) {
+           console.log('Swiped down');
+        }
 
-      if (touchendY > touchstartY) {
-         console.log('Swiped down');
-      }
-
-      if (touchendY === touchstartY) {
-         console.log('Tap');
-         pause = !pause;
-      }
+        if (touchendY === touchstartY) {
+           console.log('Tap');
+           pause = !pause;
+        }
+    }  
   }
-
 
   var ts = [Math.PI, 0, -Math.PI/2];
   var xys = [[], [], []];
