@@ -78,6 +78,9 @@ ul {
   padding: 25px;
 }
 
+.column img {
+  cursor: pointer;
+}
 .fill {
   width: 100vw;
   height: 100vh;
@@ -117,6 +120,7 @@ ul {
   position: absolute;
   top: -14px;
   right: 0px;
+  cursor: default;
   /* float: right; */
 }
 
