@@ -141,7 +141,12 @@ ul {
     display: none;
   }
   #arrow {
-    display: none;
+    /* display: none; */
+    position: initial;
+    top: initial;
+    right: initial;
+
+    transform: rotate(90deg);
   }
 
   #first {
