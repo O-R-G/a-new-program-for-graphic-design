@@ -52,7 +52,20 @@
   <? endforeach; ?>
 </div>
 
+<script src="static/js/screenfull.min.js"></script>
 <script src="static/js/global.js"></script>
 <script>
 runDots(500, 500, .05);
+
+var im = document.getElementsByTagName('img');
+for(var i = 0; i < im.length; i++) {
+  if (im[i].id == "arrow")
+    continue;
+
+  im[i].addEventListener('click', function(event) {
+    if (screenfull.enabled) {
+  		screenfull.request(event.target);
+    }
+  });
+}
 </script>
