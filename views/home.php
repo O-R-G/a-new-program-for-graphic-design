@@ -68,4 +68,9 @@ for(var i = 0; i < im.length; i++) {
     }
   });
 }
+
+document.getElementById('arrow').addEventListener('click', function() {
+  var c = document.getElementsByClassName('column');
+  c[c.length-1].scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+});
 </script>

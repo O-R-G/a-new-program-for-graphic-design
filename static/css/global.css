@@ -120,7 +120,7 @@ ul {
   position: absolute;
   top: -14px;
   right: 0px;
-  cursor: default;
+  /* cursor: default; */
   /* float: right; */
 }
 
