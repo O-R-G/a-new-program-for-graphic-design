@@ -33,7 +33,7 @@ $nav = $oo->nav($uu->ids);
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>A *New* Primer of Visual Literacy</title>
+		<title>A *New* Program for Graphic Design</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="apple-mobile-web-app-capable" content="yes">
