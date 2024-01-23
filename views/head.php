@@ -19,7 +19,20 @@ $uu = new URL();
 
 if($uu->id) 
 	$item = $oo->get($uu->id);
-else {
+else if(count($uri) == 2) {
+	try {
+        /* 
+            entries exception 
+        */
+		$uri_temp = $uri;
+        $uri_temp[0] = 'entries';
+		$temp = $oo->urls_to_ids($uri_temp);
+		$id = end($temp);
+		$item = $oo->get($id);
+	} catch(Exception $err) {
+		$item = $oo->get(0);
+	}
+} else {
 	try {
         /* 
             /home exception 
@@ -33,16 +46,26 @@ else {
 		$item = $oo->get(0);
 	}
 } 
-
 if(isset($item))
 	$name = ltrim(strip_tags($item["name1"]), ".");
 else 
 	$name = '';
 
-// document title
-$item = $oo->get($uu->id);
-// $title = $item["name1"];
-$nav = $oo->nav($uu->ids);
+$temp = $oo->urls_to_ids(array('entries'));
+$nav = $oo->nav(array(), end($temp));
+
+$head = null; 
+try {
+	/* 
+		does _head exist? 
+	*/
+	$temp = $oo->urls_to_ids(array('head'));
+	$id = end($temp);
+	$head_item = $oo->get($id);
+} catch(Exception $err) {
+	$head_item = null; 
+	// $item = $oo->get(0);
+}
 
 ?>
 <!DOCTYPE html>
@@ -59,3 +82,56 @@ $nav = $oo->nav($uu->ids);
 		<link rel="stylesheet" href="<? echo $host; ?>static/css/global.css">
 	</head>
 <body>
+	<?
+		if($head_item) {
+			?><header id="main-header"><h1><?php echo $head_item['body']; ?></h1><p><?php echo $head_item['notes']; ?></p></header><?
+		}
+	    if(!$uu->id) {
+    	    ?><nav id="menu" class="container full-vw full-vh hidden homepage"><?
+	    }
+	    else if($show_menu) {
+    	    ?><nav id="menu" class="container full-vw full-vh visible"><?
+	    }
+	    else {
+    	    ?><nav id="menu" class="container full-vw full-vh hidden"><?
+	    }
+	    ?><ul class="column">
+		    <ul class="nav-level"><?
+	    if(!empty($nav))
+	    {
+			function cmp_begin($a, $b){
+				if($a['o']['begin'] == $b['o']['begin']) return 0;
+				return $a['o']['begin'] > $b['o']['begin'] ? -1 : 1;
+			}
+	    	$prevd = $nav[0]['depth'];
+			usort($nav, 'cmp_begin');
+			// var_dump($nav)
+		    foreach($nav as $n) {
+			    $d = $n['depth'];
+			    if($d > $prevd) {
+	    		    ?><ul class="nav-level"><?
+			    }
+			    else {
+				    for($i = 0; $i < $prevd - $d; $i++) { 
+	                    ?></ul><? 
+	                }
+			    }
+			    ?><li><?
+				    if($n['o']['id'] != $uu->id) {
+	    			    ?><a href="<? echo $host.$n['url']; ?>"><?
+					    echo $n['o']['name1'];
+		    		    ?></a><?
+				    }
+				    else {
+	    			    ?><span><?= $n['o']['name1']; ?></span><?
+				    }
+			    ?></li><?
+			    $prevd = $d;
+		    }
+	    }
+	    ?></ul>
+		<div class="canvas-container dots-container" id=""></div>
+	    </ul>
+		
+    </nav>
+

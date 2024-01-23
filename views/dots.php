@@ -6,7 +6,7 @@
   </div>
 </div>
 <!-- <script src="static/js/fps.min.js"></script> -->
-<script src="static/js/global.js"></script>
+<script src="static/js/dots.js"></script>
 <script>
 var w = window.innerWidth;
 var h = window.innerHeight;
