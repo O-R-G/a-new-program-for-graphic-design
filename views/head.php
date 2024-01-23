@@ -54,19 +54,6 @@ else
 $temp = $oo->urls_to_ids(array('entries'));
 $nav = $oo->nav(array(), end($temp));
 
-$head = null; 
-try {
-	/* 
-		does _head exist? 
-	*/
-	$temp = $oo->urls_to_ids(array('head'));
-	$id = end($temp);
-	$head_item = $oo->get($id);
-} catch(Exception $err) {
-	$head_item = null; 
-	// $item = $oo->get(0);
-}
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -83,9 +70,8 @@ try {
 	</head>
 <body>
 	<?
-		if($head_item) {
-			?><header id="main-header"><h1><?php echo $head_item['body']; ?></h1><p><?php echo $head_item['notes']; ?></p></header><?
-		}
+		$head_link = $uri[1] ? '/' : 'https://www.inventorypress.com/product/a-new-program-for-graphic-design';
+		?><header id="main-header"><h1><a href="<?php echo $head_link; ?>">A *New* Program for Graphic Design</a></h1><p>by David Reinfurt</p></header><?
 	    if(!$uu->id) {
     	    ?><nav id="menu" class="container full-vw full-vh hidden homepage"><?
 	    }
