@@ -77,7 +77,7 @@ try {
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-title" content="A *New* Primer of Visual Literacy">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<link rel="apple-touch-icon" href="static/images/apple-touch-icon.png" />
+		<link rel="apple-touch-icon" href="/media/png/apple-touch-icon.png" />
 		<link rel="stylesheet" href="<? echo $host; ?>static/css/fonts.css">
 		<link rel="stylesheet" href="<? echo $host; ?>static/css/global.css">
 	</head>
