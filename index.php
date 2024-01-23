@@ -1,6 +1,8 @@
 <?
-$uri = explode('/', $_SERVER['REQUEST_URI']);
-$view = "views/";
+$request = $_SERVER['REQUEST_URI'];
+$requestclean = strtok($request,"?");
+$uri = explode('/', $requestclean);
+// $view = "views/";
 
 // show the things
 require_once("views/head.php");

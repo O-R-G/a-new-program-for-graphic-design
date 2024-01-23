@@ -1,2 +1,14 @@
 .DS_Store
+.htaccess
 .htpasswd
+*~
+
+media/*.*
+
+static/bash/backup*
+!static/bash/backup_
+static/bash/sync*
+!static/bash/sync_
+static/bash/logs/*
+
+*.sql

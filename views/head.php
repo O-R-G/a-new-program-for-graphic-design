@@ -5,9 +5,9 @@ $config = $config."/open-records-generator/config/config.php";
 require_once($config);
 
 // specific to this 'app'
-$config_dir = $root."config/";
-require_once($config_dir."url.php");
-require_once($config_dir."request.php");
+// $config_dir = $root."config/";
+// require_once($config_dir."url.php");
+// require_once($config_dir."request.php");
 
 $db = db_connect("guest");
 
@@ -17,16 +17,31 @@ $ww = new Wires();
 $uu = new URL();
 // $rr = new Request();
 
-// self
-if($uu->id)
+if($uu->id) 
 	$item = $oo->get($uu->id);
-else
-	$item = $oo->get(0);
-$name = ltrim(strip_tags($item["name1"]), ".");
+else {
+	try {
+        /* 
+            /home exception 
+        */
+		$uri_temp = $uri;
+        $uri_temp[0] = 'home';
+		$temp = $oo->urls_to_ids($uri_temp);
+		$id = end($temp);
+		$item = $oo->get($id);
+	} catch(Exception $err) {
+		$item = $oo->get(0);
+	}
+} 
+
+if(isset($item))
+	$name = ltrim(strip_tags($item["name1"]), ".");
+else 
+	$name = '';
 
 // document title
 $item = $oo->get($uu->id);
-$title = $item["name1"];
+// $title = $item["name1"];
 $nav = $oo->nav($uu->ids);
 
 ?>
