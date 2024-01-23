@@ -19,7 +19,7 @@ $uu = new URL();
 
 if($uu->id) 
 	$item = $oo->get($uu->id);
-else if(count($uri) == 2) {
+else if($uri[1]) {
 	try {
         /* 
             entries exception 
