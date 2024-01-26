@@ -4,8 +4,10 @@
 <div id="screenfull-container"></div>
 <main class="container">
   <div class="column" id="first">
-    <?= $page ? '<h2 class="page-title">' . $page . '</h2><br>' : ''; ?>
-    <div class="content"><?= $item['body']; ?></div>
+    <div>
+      <?= $page ? '<h2 class="page-title">' . $page . '</h2><br>' : ''; ?>
+      <div class="content"><?= $item['body']; ?></div>
+    </div>
     <div class="canvas-container dots-container" id="canvas-container"></div>
   </div>
 </main>
