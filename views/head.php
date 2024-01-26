@@ -75,9 +75,6 @@ $nav = $oo->nav(array(), end($temp));
 	    if(!$uu->id) {
     	    ?><nav id="menu" class="container full-vw full-vh hidden homepage"><?
 	    }
-	    else if($show_menu) {
-    	    ?><nav id="menu" class="container full-vw full-vh visible"><?
-	    }
 	    else {
     	    ?><nav id="menu" class="container full-vw full-vh hidden"><?
 	    }
