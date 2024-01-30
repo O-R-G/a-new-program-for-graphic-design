@@ -298,6 +298,7 @@ main.container,
     min-width: 100%;
     padding: 0px;
     padding-bottom: 2em;
+    padding-top: 2em;
   }
 
   .container {
@@ -315,10 +316,6 @@ main.container,
     right: initial;
 
     transform: rotate(90deg);
-  }
-
-  #first {
-    flex-direction: column-reverse;
   }
   #main-header {
     padding-right: 70px;
