@@ -16,5 +16,6 @@ else {
   require_once("views/main.php");
 }
 require_once("views/arrow.php");
+require_once("views/badge.php");
 require_once("views/foot.php");
 ?>

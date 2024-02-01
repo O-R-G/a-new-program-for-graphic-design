@@ -122,12 +122,14 @@ ul {
 .static-image {
   visibility: hidden;
 }
+
 #arrow-container {
   position: fixed;
   top: 15px;
-  left: 840px;
+  right: 15px;
   z-index: 2000;
 }
+
 #arrow {
   width: 50px;
   cursor: pointer;
@@ -135,9 +137,11 @@ ul {
   transform: rotate(90deg);
   transition: transform 0.5s;
 }
+
 .viewing-menu #arrow {
  transform: rotate(540deg);
 }
+
 #menu {
 	/* padding: 25px; */
   display: none;
@@ -150,6 +154,37 @@ ul {
 }
 .viewing-menu #menu {
     display: block;
+}
+
+#badge-container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 2000;
+}
+
+#badge {
+  width: 150px;
+  cursor: pointer;
+  display: block;
+  /* transform: rotate(90deg); */
+  opacity: 1.0;
+  transition: opacity 0.5s;
+  animation: pulse 3s infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.viewing-menu #badge {
+ opacity: 0.0;
+}
+
+@keyframes pulse {
+  0% {
+	transform: rotate(0deg);
+  }
+  100% {
+	transform: rotate(1440deg);
+  }
 }
 
 #main-header {
