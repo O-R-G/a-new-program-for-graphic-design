@@ -68,7 +68,10 @@ ul {
 	padding-left: 0px;
 	margin: 0px;
 }
-
+video {
+  display: block;
+  width: 100%;
+}
 .container {
   display: flex;
   flex-direction: row;

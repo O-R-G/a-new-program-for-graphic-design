@@ -30,6 +30,7 @@
     for(let j = 0; j < attrs.length; j++) {
       r.setAttribute(attrs[j].nodeName, attrs[j].nodeValue);
     }
+    r.setAttribute('controls', true);
     imgs[i].parentNode.replaceChild(r, imgs[i]);
   }
 </script>
