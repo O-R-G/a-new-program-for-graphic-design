@@ -21,8 +21,15 @@
   for(let i = 0; i < dots_container.length; i++) 
     runDots(dots_container[i], 500, 500, .05);
   if(screenfull.isEnabled) {
-    var imgs = document.querySelectorAll('img:not(.prevent-screenfull),video:not(.prevent-screenfull)');
-    console.log(imgs);
 		screenfull.extInit(document.getElementById('screenfull-container'), document.querySelectorAll('img:not(.prevent-screenfull)'), true, false);
+  }
+  let imgs = document.querySelectorAll('img[src*=".mov"], img[src*=".mp4"], img[src*=".wav"], img[src*=".avi"]');
+  for(let i = 0; i < imgs.length; i++) {
+    let r = document.createElement('video');
+    let attrs = imgs[i].attributes;
+    for(let j = 0; j < attrs.length; j++) {
+      r.setAttribute(attrs[j].nodeName, attrs[j].nodeValue);
+    }
+    imgs[i].parentNode.replaceChild(r, imgs[i]);
   }
 </script>
