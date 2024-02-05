@@ -65,7 +65,7 @@ a:active {
 
 ul {
 	list-style-type: none;
-	padding-left: 0px;
+	padding-left: 1em;
 	margin: 0px;
 }
 video {

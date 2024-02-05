@@ -51,8 +51,22 @@ if(isset($item))
 else 
 	$name = '';
 
-$temp = $oo->urls_to_ids(array('entries'));
-$nav = $oo->nav(array(), end($temp));
+// $temp = $oo->urls_to_ids(array('entries'));
+// var_dump($uu->ids);
+// $ids = isset($uri[])
+$nav = $oo->nav($uu->ids);
+// $nav = $oo->nav($uu->ids);
+$show_menu = false;
+var_dump($uu->ids);
+if($uu->id) {
+	$is_leaf = empty($oo->children_ids($uu->id));
+	var_dump($is_leaf);
+	$internal = isset($_SERVER['HTTP_REFERER']) && (substr($_SERVER['HTTP_REFERER'], 0, strlen($host)) === $host);	
+	if(!$is_leaf && $internal)
+		$show_menu = true;
+} else  
+    if ($uri[1])  
+        $uu->id = -1; 
 
 ?>
 <!DOCTYPE html>
@@ -73,22 +87,25 @@ $nav = $oo->nav(array(), end($temp));
 		$head_link = $uri[1] ? '/' : 'https://www.inventorypress.com/product/a-new-program-for-graphic-design';
 		?><header id="main-header"><h1 id="site-title"><a href="<?php echo $head_link; ?>">A *New* Program for <br>Graphic Design</a></h1><p>by David Reinfurt</p></header><?
 	    if(!$uu->id) {
-    	    ?><nav id="menu" class="container full-vw full-vh hidden homepage"><?
+    	    ?><nav id="menu" class="hidden homepage"><?
+	    }
+	    else if($show_menu) {
+    	    ?><nav id="menu" class="visible"><?
 	    }
 	    else {
-    	    ?><nav id="menu" class="container full-vw full-vh hidden"><?
+    	    ?><nav id="menu" class="hidden"><?
 	    }
 	    ?><ul class="column">
 		    <ul class="nav-level"><?
 	    if(!empty($nav))
 	    {
 			function cmp_begin($a, $b){
-				if($a['o']['begin'] == $b['o']['begin']) return 0;
+				if($a['o']['begin'] == $b['o']['begin'] || $a['depth'] !== $b['depth']) return 0;
 				return $a['o']['begin'] > $b['o']['begin'] ? -1 : 1;
 			}
 	    	$prevd = $nav[0]['depth'];
 			usort($nav, 'cmp_begin');
-			// var_dump($nav)
+			// var_dump(count($nav));
 		    foreach($nav as $n) {
 			    $d = $n['depth'];
 			    if($d > $prevd) {
