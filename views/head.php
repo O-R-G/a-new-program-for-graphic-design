@@ -55,7 +55,6 @@ $show_menu = false;
 
 if($uu->id) {
 	$is_leaf = empty($oo->children_ids($uu->id));
-	var_dump($is_leaf);
 	$internal = isset($_SERVER['HTTP_REFERER']) && (substr($_SERVER['HTTP_REFERER'], 0, strlen($host)) === $host);	
 	if(!$is_leaf && $internal)
 		$show_menu = true;
@@ -100,8 +99,8 @@ if($uu->id) {
 			}
 	    	$prevd = $nav[0]['depth'];
 			usort($nav, 'cmp_begin');
-			// var_dump(count($nav));
-		    foreach($nav as $n) {
+
+			foreach($nav as $n) {
 			    $d = $n['depth'];
 			    if($d > $prevd) {
 	    		    ?><ul class="nav-level"><?
