@@ -55,12 +55,17 @@ $show_menu = false;
 
 if($uu->id) {
 	$is_leaf = empty($oo->children_ids($uu->id));
-	$internal = isset($_SERVER['HTTP_REFERER']) && (substr($_SERVER['HTTP_REFERER'], 0, strlen($host)) === $host);	
+	$internal = isset($_SERVER['HTTP_REFERER']) && (strpos($_SERVER['HTTP_REFERER'], $host) !== false);	
 	if(!$is_leaf && $internal)
 		$show_menu = true;
 } else  
     if ($uri[1])  
         $uu->id = -1; 
+$body_class = array();
+
+if($show_menu) $body_class[] = 'viewing-menu';
+
+$body_class_str = implode(' ', $body_class);
 
 ?>
 <!DOCTYPE html>
@@ -76,7 +81,7 @@ if($uu->id) {
 		<link rel="stylesheet" href="<? echo $host; ?>static/css/fonts.css">
 		<link rel="stylesheet" href="<? echo $host; ?>static/css/global.css">
 	</head>
-<body>
+<body class="<?php echo implode(' ', $body_class); ?>">
 	<?
 		$head_link = $uri[1] ? '/' : 'https://www.inventorypress.com/product/a-new-program-for-graphic-design';
 		?><header id="main-header"><h1 id="site-title"><a href="<?php echo $head_link; ?>">A *New* Program for <br>Graphic Design</a></h1><p>by David Reinfurt</p></header><?
