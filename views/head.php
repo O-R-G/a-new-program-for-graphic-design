@@ -50,14 +50,9 @@ if(isset($item))
 	$name = ltrim(strip_tags($item["name1"]), ".");
 else 
 	$name = '';
-
-// $temp = $oo->urls_to_ids(array('entries'));
-// var_dump($uu->ids);
-// $ids = isset($uri[])
 $nav = $oo->nav($uu->ids);
-// $nav = $oo->nav($uu->ids);
 $show_menu = false;
-var_dump($uu->ids);
+
 if($uu->id) {
 	$is_leaf = empty($oo->children_ids($uu->id));
 	var_dump($is_leaf);
