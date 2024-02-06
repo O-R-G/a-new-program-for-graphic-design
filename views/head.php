@@ -82,9 +82,7 @@ $body_class_str = implode(' ', $body_class);
 		<link rel="stylesheet" href="<? echo $host; ?>static/css/global.css">
 	</head>
 <body class="<?php echo implode(' ', $body_class); ?>">
-	<?
-		$head_link = $uri[1] ? '/' : 'https://www.inventorypress.com/product/a-new-program-for-graphic-design';
-		?><header id="main-header"><h1 id="site-title"><a href="<?php echo $head_link; ?>">A *New* Program for <br>Graphic Design</a></h1><p>by David Reinfurt</p></header><?
+	<header id="main-header"><h1 id="site-title"><a href="/">A *New* Program for <br>Graphic Design</a></h1><p>by David Reinfurt</p></header><?
 	    if(!$uu->id) {
     	    ?><nav id="menu" class="hidden homepage"><?
 	    }
