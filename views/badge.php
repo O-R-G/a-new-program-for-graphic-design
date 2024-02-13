@@ -1,5 +1,5 @@
 <div id="badge-container">
-    <a href="/media/00136.pdf" download>
+    <a href="media/pdf/IP_Reinfurt_Teaching Guide.pdf" download>
 	<img id="badge" class="prevent-screenfull" src="/media/png/teaching-guide.png" onclick="toggleMenu();">
     </a>
 </div>
