@@ -1,0 +1,52 @@
+@font-face {
+    font-family: 'Gerstner Programm FSL';
+    src: url('GerstnerProgrammFSL-BoldItalic.eot');
+    src: url('GerstnerProgrammFSL-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('GerstnerProgrammFSL-BoldItalic.woff2') format('woff2'),
+        url('GerstnerProgrammFSL-BoldItalic.woff') format('woff'),
+        url('GerstnerProgrammFSL-BoldItalic.ttf') format('truetype'),
+        url('GerstnerProgrammFSL-BoldItalic.svg#GerstnerProgrammFSL-BoldItalic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gerstner Programm FSL';
+    src: url('GerstnerProgrammFSL-Italic.eot');
+    src: url('GerstnerProgrammFSL-Italic.eot?#iefix') format('embedded-opentype'),
+        url('GerstnerProgrammFSL-Italic.woff2') format('woff2'),
+        url('GerstnerProgrammFSL-Italic.woff') format('woff'),
+        url('GerstnerProgrammFSL-Italic.ttf') format('truetype'),
+        url('GerstnerProgrammFSL-Italic.svg#GerstnerProgrammFSL-Italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gerstner Programm FSL';
+    src: url('GerstnerProgrammFSL-Regular.eot');
+    src: url('GerstnerProgrammFSL-Regular.eot?#iefix') format('embedded-opentype'),
+        url('GerstnerProgrammFSL-Regular.woff2') format('woff2'),
+        url('GerstnerProgrammFSL-Regular.woff') format('woff'),
+        url('GerstnerProgrammFSL-Regular.ttf') format('truetype'),
+        url('GerstnerProgrammFSL-Regular.svg#GerstnerProgrammFSL-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gerstner Programm FSL';
+    src: url('GerstnerProgrammFSL-Bold.eot');
+    src: url('GerstnerProgrammFSL-Bold.eot?#iefix') format('embedded-opentype'),
+        url('GerstnerProgrammFSL-Bold.woff2') format('woff2'),
+        url('GerstnerProgrammFSL-Bold.woff') format('woff'),
+        url('GerstnerProgrammFSL-Bold.ttf') format('truetype'),
+        url('GerstnerProgrammFSL-Bold.svg#GerstnerProgrammFSL-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
