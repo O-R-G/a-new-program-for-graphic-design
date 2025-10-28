@@ -10,5 +10,6 @@ static/bash/backup*
 static/bash/sync*
 !static/bash/sync_
 static/bash/logs/*
+!static/bash/logs/.gitkeep
 
 *.sql
