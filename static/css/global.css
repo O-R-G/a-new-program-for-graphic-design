@@ -205,7 +205,10 @@ main.container,
 #menu{
   padding-top: 62px;
 }
-
+.viewing-menu main.container {
+  opacity: 0;
+  pointer-events: none;
+}
 /* screenfull */
 #screenfull-container {
   display: none;
