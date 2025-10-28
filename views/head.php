@@ -80,6 +80,7 @@ $body_class_str = implode(' ', $body_class);
 		<link rel="apple-touch-icon" href="/media/png/apple-touch-icon.png" />
 		<link rel="stylesheet" href="<? echo $host; ?>static/css/fonts.css">
 		<link rel="stylesheet" href="<? echo $host; ?>static/css/global.css">
+		<link rel="stylesheet" href="<? echo $host; ?>static/css/screenfull-windowfull.css">
 	</head>
 <body class="<?php echo implode(' ', $body_class); ?>">
 	<header id="main-header"><h1 id="site-title"><a href="/">A *New* Program for <br>Graphic Design</a></h1><p>by David Reinfurt</p></header><?
