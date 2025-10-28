@@ -50,7 +50,7 @@ if(isset($item))
 	$name = ltrim(strip_tags($item["name1"]), ".");
 else 
 	$name = '';
-$nav = $oo->nav($uu->ids);
+$nav = $uu->ids ? $oo->nav($uu->ids) : array();
 $show_menu = false;
 
 if($uu->id) {

@@ -1,5 +1,4 @@
 		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script src="static/js/global.js"></script>
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109489967-3"></script>
 		<script>
 		  window.dataLayer = window.dataLayer || [];
